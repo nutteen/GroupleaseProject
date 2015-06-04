@@ -17,6 +17,8 @@
     </bean>
     
     <mvc:annotation-driven />
+    
+    <!-- Use mvc view-controller to configure a new controller for the registration success page -->
 		<mvc:view-controller path="/users/registration_ok" view-name="users/registrationOk" />
 
 </beans>
