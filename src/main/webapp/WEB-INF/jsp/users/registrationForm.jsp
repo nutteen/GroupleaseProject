@@ -86,9 +86,7 @@
 				<div style="text-align: center"><input type="submit" class="btn btn-primary"  value="Register" /></div>
 				
 			</form:form>
-			<script type="text/javascript" src="<%=request.getContextPath() %>/bootstrap/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="<%=request.getContextPath() %>/jquery/jquery-1.11.3.min.js"></script>
-		
+
 			<hr>
 			
 			<!-- Footer -->
@@ -101,6 +99,7 @@
         </footer>
 		</div>
 		
-		</div>
+		<script type="text/javascript" src="<%=request.getContextPath() %>/jquery/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath() %>/bootstrap/js/bootstrap.min.js"></script>
 	</body>
 </html>
