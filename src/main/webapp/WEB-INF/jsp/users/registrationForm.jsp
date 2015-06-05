@@ -1,6 +1,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
-	<head><title>New User Registration</title></head>
+	<head>
+		<title>New User Registration</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<link rel='stylesheet' href='<%=request.getContextPath() %>/bootstrap/css/bootstrap.min.css'>
+	</head>
 	<body>
 		<form:form action="." modelAttribute="account">
 			<h1>New User Registration</h1>
@@ -20,5 +24,7 @@
 			<div><input type="submit" value="Register" /></div>
 			
 		</form:form>
+		<script type="text/javascript" src="<%=request.getContextPath() %>/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath() %>/jquery/jquery-1.11.3.min.js"></script>
 	</body>
 </html>

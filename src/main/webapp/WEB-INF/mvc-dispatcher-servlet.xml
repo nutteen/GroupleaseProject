@@ -16,6 +16,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
     
+		<mvc:resources mapping="/resources/**" location="/resources/"/>    
+		<mvc:resources mapping="/bootstrap/**" location="/bootstrap/"/>
+		<mvc:resources mapping="/jquery/**" location="/jquery/"/>
     <mvc:annotation-driven />
     
     <!-- Use mvc view-controller to configure a new controller for the registration success page -->
