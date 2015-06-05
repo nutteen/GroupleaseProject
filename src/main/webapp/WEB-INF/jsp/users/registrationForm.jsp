@@ -49,7 +49,7 @@
 					<label><form:checkbox id="acceptTerms" path="acceptTerms"/>I accept the <a href="#">terms of use</a>.</label>
 				</div>
 				
-				<div><input type="submit" class="btn btn-primary" value="Register" /></div>
+				<div style="text-align: center"><input type="submit" class="btn btn-primary"  value="Register" /></div>
 				
 			</form:form>
 			<script type="text/javascript" src="<%=request.getContextPath() %>/bootstrap/js/bootstrap.min.js"></script>
