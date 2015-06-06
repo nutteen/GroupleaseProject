@@ -1,6 +1,9 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <html>
 	<head>
-		<title>Registration Confirmed</title>
+		<title><spring:message code="registrationOk.pageTitle"/></title>
 		<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel='stylesheet' href='<%=request.getContextPath() %>/bootstrap/css/bootstrap.min.css'>
@@ -52,7 +55,8 @@
 			<!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
             <h1>A Warm Welcome!</h1>
-            <p>Thank you for registering.</p>
+            <p><spring:message code="registrationOk.message.thanks"/></p>
+            <div><input type="submit" class="btn btn-primary" value="Continue >>"/></div>
         </header>
 			
 			<hr>

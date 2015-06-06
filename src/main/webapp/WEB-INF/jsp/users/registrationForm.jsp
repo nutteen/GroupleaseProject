@@ -1,7 +1,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+<spring:message var="pageTitle" code="newUserRegistration.pageTitle" />
+<spring:message var="msgAllFieldsRequired" code="newUserRegistration.message.allFieldsRequired" />
+<spring:message var="register" code="newUserRegistration.label.register"/>
 <html>
 	<head>
-		<title>User Registration</title>
+		<title>${pageTitle}</title>
 		<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel='stylesheet' href='<%=request.getContextPath() %>/bootstrap/css/bootstrap.min.css'>
@@ -42,48 +47,58 @@
     </nav>
     
 		<div class="container">
-			<h2>User Registration</h2>
+			<h2>${pageTitle}</h2>
+			<div>${msgAllFieldsRequired}</div>
 			<form:form action="." modelAttribute="account">
 			
+				<form:errors path="*">
+					<div><p><spring:message code="error.global"/></p></div>
+				</form:errors>
+				
 				<div class="form-group">
-					<label for="username">Username:</label>
+					<label for="username"> <spring:message code="newUserRegistration.label.username"/> </label>
 					<form:input type="text" class="form-control" id="username" placeholder="Enter username" path="username"/>
+					<form:errors path="username" htmlEscape="false" />	
 				</div>
 				
 				<div class="form-group">
-					<label for="password">Password:</label>
+					<label for="password"> <spring:message code="newUserRegistration.label.password"/> </label>
 					<form:input type="password" class="form-control" id="password" placeholder="Password" path="password"/>
+					<form:errors path="password" htmlEscape="false" />	
 				</div>
 				
 				<div class="form-group">
-					<label for="confirmPassword">Confirm password:</label>
+					<label for="confirmPassword"> <spring:message code="newUserRegistration.label.confirmPassword"/> </label>
 					<form:input type="password" class="form-control" id="confirmPassword" placeholder="Password" path="confirmPassword"/>
+					<form:errors path="confirmPassword" htmlEscape="false" />	
 				</div>
 				
 				<div class="form-group">
-					<label for="email">E-mail address:</label>
+					<label for="email"> <spring:message code="newUserRegistration.label.email"/> </label>
 					<form:input type="email" class="form-control" id="email" placeholder="Email" path="email"/>
+					<form:errors path="email" htmlEscape="false" />	
 				</div>
 				
 				<div class="form-group">
-					<label for="firstName">First name:</label>
+					<label for="firstName"> <spring:message code="newUserRegistration.label.firstName"/> </label>
 					<form:input type="text" class="form-control" id="firstName" placeholder="Enter first name" path="firstName"/>
 				</div>
 				
 				<div class="form-group">
-					<label for="lastName">Last name:</label>
+					<label for="lastName"> <spring:message code="newUserRegistration.label.lastName"/> </label>
 					<form:input type="text" class="form-control" id="lastName" placeholder="Enter last name" path="lastName"/>
 				</div>
 	
 				<div class="checkbox">
-					<label><form:checkbox id="marketingOk" path="marketingOk"/>Please send me product updates by e-mail.</label>
+					<label><form:checkbox id="marketingOk" path="marketingOk"/> <spring:message code="newUserRegistration.label.marketingOk"/> </label>
 				</div>
 				
 				<div class="checkbox">
-					<label><form:checkbox id="acceptTerms" path="acceptTerms"/>I accept the <a href="#">terms of use</a>.</label>
+					<label><form:checkbox id="acceptTerms" path="acceptTerms"/> <spring:message code="newUserRegistration.label.acceptTerms"/> </label>
+					<form:errors path="acceptTerms" htmlEscape="false" />	
 				</div>
 				
-				<div style="text-align: center"><input type="submit" class="btn btn-primary"  value="Register" /></div>
+				<div style="text-align: center"><input type="submit" class="btn btn-primary" value="${register}"/></div>
 				
 			</form:form>
 

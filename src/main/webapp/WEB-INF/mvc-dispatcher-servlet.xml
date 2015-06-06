@@ -16,6 +16,10 @@
         <property name="suffix" value=".jsp"/>
     </bean>
     
+    <bean id="messageSource"
+    	class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+    		p:basename="classpath:messages"/>
+    
 		<mvc:resources mapping="/resources/**" location="/resources/"/>    
 		<mvc:resources mapping="/bootstrap/**" location="/bootstrap/"/>
 		<mvc:resources mapping="/jquery/**" location="/jquery/"/>

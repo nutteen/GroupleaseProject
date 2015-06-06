@@ -8,6 +8,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.validator.constraints.ScriptAssert;
 
+// Password check script - check if password equals with confirm password
 @ScriptAssert(
 		lang = "javascript",
 		script = "_this.confirmPassword.equals(_this.password)",
@@ -47,8 +48,8 @@ public class AccountForm {
 	public boolean isMarketingOk() { return marketingOk; }
 	public void setMarketingOk(boolean marketingOk) { this.marketingOk = marketingOk; }
 	
-	@AssertTrue(message = "{account.acceptTerms.assertTrue.message}")
-	public boolean isAcceptTerms() { return acceptTerms; }
+	@AssertTrue(message = "You must accept the terms of use to register.")
+	public boolean getAcceptTerms() { return acceptTerms; }
 	public void setAcceptTerms(boolean acceptTerms) { this.acceptTerms = acceptTerms; }
 	
 	public String toString() {

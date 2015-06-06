@@ -23,6 +23,11 @@ public class AccountController {
 	
 	private static final Logger log = LoggerFactory.getLogger(AccountController.class);
 
+	// Tells Spring Web MVC to call this method when initializing the WebDataBinder
+	// which responsible for binding HTTP parameters to form beans.
+	// This prevents hackers to inject data into form bean properties that-
+	// aren't intended to be accessed via the HTML form. (Spring automatically binds HTML forms-
+	// to an underlying form bean).
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
 		binder.setAllowedFields(new String[] {
