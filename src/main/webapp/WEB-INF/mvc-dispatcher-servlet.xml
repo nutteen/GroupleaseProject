@@ -32,6 +32,7 @@
     
     <!-- Use mvc view-controller to configure a new controller for the registration success page -->
 		<mvc:view-controller path="/users/registration_ok" view-name="users/registrationOk" />
+		<mvc:view-controller path="/" view-name="index"/>
 		
 		<!-- import another bean configuration file -->
 		<import resource="beans-service.xml"/>
