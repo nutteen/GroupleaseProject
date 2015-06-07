@@ -1,3 +1,6 @@
+<%@ page import="java.util.List"%>
+<%@ page import="th.co.grouplease.Account"%>
+
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
@@ -46,6 +49,43 @@
     
     <!-- Body -->
     <div class="container">
+    
+    	<!-- Table to show all accounts -->
+    	<table class="table table-striped">
+    		<!-- Table header -->
+    		<thead>
+    			<tr>
+    				<th>Id</th>
+    				<th>Username</th>
+    				<th>Name</th>
+    				<th>Email</th>
+    				<th>Joined date</th>
+    			</tr>
+    		</thead>
+    		
+    		<!-- Table body -->
+    		<tbody>
+    			<% 
+						@SuppressWarnings("unchecked")
+						List<Account> accounts = (List<Account>)request.getAttribute("accounts"); 
+						for(Account account : accounts){
+					%>
+					
+						<tr>
+							<td><%= account.getId() %></td>
+							<td><%= account.getUsername() %></td>
+							<td><%= account.getFullName() %></td>
+							<td><%= account.getEmail() %></td>
+							<td><%= account.getDateCreated() %></td>
+						</tr>
+						
+					<%
+						}
+					%>
+    		</tbody>
+    	</table>
+    	
+    	<hr>
     
     	<!-- Footer -->
     	<footer>

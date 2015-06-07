@@ -3,6 +3,8 @@
 
 package th.co.grouplease.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -28,6 +30,12 @@ public class AccountServiceImpl implements AccountService{
 			accountDao.create(account, password); 
 		
 		return valid;
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Account> getAllAccounts()
+	{
+		return accountDao.getAll();
 	}
 
 	// Checks for duplicate usernames

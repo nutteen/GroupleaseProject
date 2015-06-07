@@ -4,6 +4,7 @@
 package th.co.grouplease.dao;
 
 import javax.inject.Inject;
+
 import org.hibernate.Query;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -32,5 +33,4 @@ public class HbnAccountDao extends AbstractHbnDao<Account>
 		q.setParameter("username", username);
 		return (Account)q.uniqueResult();
 	}
-	
 }
