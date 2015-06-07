@@ -1,0 +1,8 @@
+1. Create database
+mysql> create database <db>;
+
+2. Show all databases
+mysql> show databases;
+
+3. Activate the database
+mysql> use <db>;
