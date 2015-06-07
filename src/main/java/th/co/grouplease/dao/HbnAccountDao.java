@@ -1,3 +1,6 @@
+// Author: Peeranut Ngaorungsri
+// Copyright 2015 <nutteen@gmail.com>
+
 package th.co.grouplease.dao;
 
 import javax.inject.Inject;
