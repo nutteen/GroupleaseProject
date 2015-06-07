@@ -1,0 +1,1 @@
+C:\Dev\library\mysql-5.6.25-winx64\bin\mysql -u root -p
