@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import th.co.grouplease.Account;
 
-// Mark ass DAO
+// Mark as DAO
 @Repository
 public class HbnAccountDao extends AbstractHbnDao<Account> 
 	implements AccountDao{
