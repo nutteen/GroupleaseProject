@@ -50,6 +50,7 @@
     <!-- Body -->
     <div class="container">
     
+    	<h4>Accounts</h4>
     	<!-- Table to show all accounts -->
     	<table class="table table-striped">
     		<!-- Table header -->
@@ -65,6 +66,7 @@
     		
     		<!-- Table body -->
     		<tbody>
+    			
     			<% 
 						@SuppressWarnings("unchecked")
 						List<Account> accounts = (List<Account>)request.getAttribute("accounts"); 
@@ -85,6 +87,34 @@
     		</tbody>
     	</table>
     	
+    	<!-- Filter inputs -->
+    	<h4>Filter</h4>
+    	
+    	<form:form action="filter" modelAttribute="filter">
+    	
+    		<div class="form-group">
+					<label for="id"> Id: </label>
+					<form:input type="text" class="form-control" placeholder="Enter id filter" path="id"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="username"> Username: </label>
+					<form:input type="text" class="form-control" placeholder="Enter username filter" path="username"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="name"> Name: </label>
+					<form:input type="text" class="form-control" placeholder="Enter name filter" path="name"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="email"> Email: </label>
+					<form:input type="text" class="form-control" placeholder="Enter email filter" path="email"/>
+				</div>
+				
+				<div style="text-align: center"><input type="submit" class="btn btn-primary" value="Filter"/></div>
+    	</form:form>
+
     	<hr>
     
     	<!-- Footer -->

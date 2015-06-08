@@ -36,7 +36,7 @@ public abstract class AbstractHbnDao<T extends Object>
 		return domainClass;
 	}
 	
-	private String getDomainClassName() {
+	protected String getDomainClassName() {
 		return getDomainClass().getName();
 	}
 	

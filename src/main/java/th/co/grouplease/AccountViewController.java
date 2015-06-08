@@ -1,22 +1,22 @@
 package th.co.grouplease;
 
-import java.util.List;
+import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import th.co.grouplease.filter.AccountFilterForm;
 import th.co.grouplease.service.AccountService;
 
 @Controller
 public class AccountViewController {
 	
 	private static final String VN_INDEX = "index";
-	
-	private static final Logger log = LoggerFactory.getLogger(AccountController.class);
 	
 	private AccountService accountService;
 	
@@ -29,18 +29,21 @@ public class AccountViewController {
 	@RequestMapping(value = "/")
 	public String getAndRenderAccounts(Model model){
 		
-		// Get all accounts in the database
-		List<Account> accounts = accountService.getAllAccounts();
+		model.addAttribute("filter", new AccountFilterForm());
 		
-		log.info("All accounts in database");
+		// Get all accounts in the database, and store in accounts
+		model.addAttribute("accounts", accountService.getAllAccounts());
 		
-		for(Account account : accounts)
-		{
-			log.info("Id: " + account.getId() + " Name: " + account.getFullName() + 
-					" Email: " + account.getEmail() + " Joined date: " + account.getDateCreated());
-		}
+		return VN_INDEX;
+	}
+	
+	@RequestMapping(value = "/filter", method = RequestMethod.POST)
+	public String getAndRenderFilteredAccounts(Model model,
+			@ModelAttribute("filter") @Valid AccountFilterForm form,
+			BindingResult result){
 		
-		model.addAttribute("accounts", accounts);
+		// Get all accounts in the database, and store in accounts
+		model.addAttribute("accounts", accountService.getAccountsByFilter(form));
 		
 		return VN_INDEX;
 	}

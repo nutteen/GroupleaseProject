@@ -13,6 +13,7 @@ import org.springframework.validation.Errors;
 
 import th.co.grouplease.Account;
 import th.co.grouplease.dao.AccountDao;
+import th.co.grouplease.filter.AccountFilterForm;
 
 @Service
 @Transactional(readOnly = true)
@@ -31,12 +32,6 @@ public class AccountServiceImpl implements AccountService{
 		
 		return valid;
 	}
-	
-	@Transactional(readOnly = true)
-	public List<Account> getAllAccounts()
-	{
-		return accountDao.getAll();
-	}
 
 	// Checks for duplicate usernames
 	private void validateUsername(String username, Errors errors) {
@@ -44,6 +39,18 @@ public class AccountServiceImpl implements AccountService{
 			errors.rejectValue("username", "error.duplicate",
 					new String[] { username }, null);
 		}
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Account> getAllAccounts()
+	{
+		return accountDao.getAll();
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Account> getAccountsByFilter(AccountFilterForm filterForm)
+	{
+		return accountDao.findByFilter(filterForm);
 	}
 
 }
