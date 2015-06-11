@@ -35,13 +35,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="/GroupleaseProject/about">About</a>
                     </li>
                     <li>
                         <a href="/GroupleaseProject/interestCalculation">Services</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="/GroupleaseProject/contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +54,7 @@
 		
 			<!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>A Warm Welcome!</h1>
+            <h2>A Warm Welcome!</h2>
             <p><spring:message code="registrationOk.message.thanks"/></p>
             <div><input type="submit" class="btn btn-primary" value="Continue >>"/></div>
         </header>
