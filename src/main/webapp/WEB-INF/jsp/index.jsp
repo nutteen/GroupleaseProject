@@ -88,7 +88,7 @@
     	</table>
     	
     	<!-- Filter inputs -->
-    	<h4>Filter</h4>
+    	<h4>Search</h4>
     	
     	<form:form action="filter" modelAttribute="filter">
     	
@@ -112,7 +112,7 @@
 					<form:input type="text" class="form-control" placeholder="Enter email filter" path="email"/>
 				</div>
 				
-				<div style="text-align: center"><input type="submit" class="btn btn-primary" value="Filter"/></div>
+				<div><input type="submit" class="btn btn-primary" value="Filter"/></div>
     	</form:form>
 
     	<hr>
