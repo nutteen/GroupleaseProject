@@ -94,7 +94,7 @@
     	
     		<div class="form-group">
 					<label for="id"> Id: </label>
-					<form:input type="text" class="form-control" placeholder="Enter id filter" path="id"/>
+					<form:input type="number" class="form-control" placeholder="Enter id filter" path="id"/>
 				</div>
 				
 				<div class="form-group">
